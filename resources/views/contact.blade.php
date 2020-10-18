@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Contact')
 @section('content')
-	<h1>Contact</h1>
+	<h1>{{ __('Contact') }}</h1>
 	<form method="post" action="{{ route('contact') }}">
 		@csrf
 		{{-- @if($errors->any())
@@ -17,6 +17,6 @@
 		{!! $errors->first('email', '<small>:message</small></br>') !!}
 		<textarea name="content">{{ old('content') }}</textarea><br />
 		{!! $errors->first('content', '<small>:message</small></br>') !!}
-		<button type="submit">Enviar</button>
+		<button type="submit">@lang('Send')</button>
 	</form>
 @endsection
