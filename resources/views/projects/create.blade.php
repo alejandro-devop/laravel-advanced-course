@@ -2,7 +2,8 @@
 @section('title', 'Create project')
 @section('content')
 	<h1>Create project</h1>
-	<form action="">
+	<form action="{{ route('projects.store') }}" method='POST'>
+		@csrf
 		<div>
 			<label for="title">
 				Name: 
@@ -20,6 +21,9 @@
 				description: 
 				<textarea name="description"></textarea>
 			</label>
+		</div>
+		<div>
+			<button>Enviar</button>
 		</div>
 	</form>
 @endsection
