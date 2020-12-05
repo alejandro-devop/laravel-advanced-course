@@ -11,4 +11,8 @@ class Project extends Model
     // If the table is named same as the class, you don't need to declare this
     // property
     // protected $table = 'project';
+    public function getRouteKeyName()
+    {
+    	return 'url';
+    }
 }
