@@ -47,5 +47,23 @@ class ProjectController extends Controller
         // ]);
         Project::create($request->validated()); // With this we ensure that only the validated fields are passed to the create
         return redirect()->route('projects.index');
-    }    
+    }
+
+    public function edit(Project $project)
+    {
+        return view('projects.edit', [
+            'project' => $project
+        ]);
+    }
+
+    public function update(Project $project, CreateProjectRequest $request)
+    {
+        // $project->update([
+        //     'title' => request('title'),
+        //     'url' => request('url'),
+        //     'description' => request('description'),
+        // ]);
+        $project->update($request->validated());
+        return redirect()->route('projects.show', $project);
+    }
 }
