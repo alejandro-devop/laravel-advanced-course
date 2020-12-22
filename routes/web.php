@@ -7,7 +7,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 // Route::resource('projects', ProjectController::class);
-// Route::resource('portafolio', ProjectController::class)->names('projects')->parameters(['portafolio' => 'project']);
+Route::resource('portafolio', ProjectController::class)->names('projects')->parameters(['portafolio' => 'project']);
 
 // Route::get('/projects', [ProjectController::class, 'index'] )->name('projects.index');
 // Route::post('/projects/store', [ProjectController::class, 'store'] )->name('projects.store');

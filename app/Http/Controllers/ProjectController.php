@@ -48,7 +48,7 @@ class ProjectController extends Controller
         //     'description'  => request('description'),
         // ]);
         Project::create($request->validated()); // With this we ensure that only the validated fields are passed to the create
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.index')->with('status', 'El projecto fue creado con éxito');
     }
 
     public function edit(Project $project)
@@ -66,12 +66,12 @@ class ProjectController extends Controller
         //     'description' => request('description'),
         // ]);
         $project->update($request->validated());
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', $project)->with('status', 'El projecto fue actualizado');
     }
 
     public function destroy(Project $project) 
     {
         $project->delete();
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.index')->with('status', 'El projecto fue eliminado');
     }
 }

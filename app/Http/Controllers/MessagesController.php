@@ -21,6 +21,6 @@ class MessagesController extends Controller
     	// Send to the browser
     	// return new MessageReceive($message);
     	Mail::to('jakop.box@gmail.com')->queue(new MessageReceive($message));
-    	return 'Datos validados';
+    	return back()->with('status', 'Recibimos tu mensaje, te responderemos...');
     }
 }
