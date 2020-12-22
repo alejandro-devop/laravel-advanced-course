@@ -13,5 +13,6 @@ Route::get('/projects/create', [ProjectController::class, 'create'] )->name('pro
 Route::get('/projects/{project}/editar', [ProjectController::class, 'edit'] )->name('projects.edit');
 Route::patch('/projects/{project}', [ProjectController::class, 'update'] )->name('projects.update');
 Route::get('/projects/{project}', [ProjectController::class, 'show'] )->name('projects.show');
+Route::delete('/projects/{project}', [ProjectController::class, 'destroy'] )->name('projects.destroy');
 Route::post('/contact', [MessagesController::class, 'store'])->name('contact');
 // Route::resource('portfolio', 'App\\Http\\Controllers\\PortfolioController');
